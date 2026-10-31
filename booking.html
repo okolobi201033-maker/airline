@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Your Booking | SkyLink Airways</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../booking.css" />
+
+    <script src="../script.js" defer></script>
+    <script src="../booking.js" defer></script>
+  </head>
+
+  <body>
+    <header class="booking-header">
+      <a href="../index.html" class="booking-logo">
+        ✈ SkyLink <span>Airways</span>
+      </a>
+
+      <a href="flights.html" class="back-link">← Back to flights</a>
+    </header>
+
+    <main class="booking-container">
+      <section class="booking-hero">
+        <span class="booking-label">YOUR JOURNEY STARTS HERE</span>
+        <h1>Complete your booking</h1>
+        <p>Review your flight and enter your passenger details.</p>
+      </section>
+
+      <div class="demo-notice">
+        <strong>DEMO BOOKING</strong>
+        This is a demonstration website. No real ticket will be issued and no
+        payment will be collected.
+      </div>
+
+      <div class="booking-layout">
+        <section class="passenger-panel">
+          <div class="panel-heading">
+            <span class="step-number">01</span>
+            <div>
+              <h2>Passenger information</h2>
+              <p>Enter the details of the person travelling.</p>
+            </div>
+          </div>
+
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First name *</label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last name *</label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email address *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone number *</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="dateOfBirth">Date of birth *</label>
+                <input
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  type="date"
+                  autocomplete="bday"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Title *</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select title</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Ms">Ms</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Dr">Dr</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="panel-heading contact-heading">
+              <span class="step-number">02</span>
+              <div>
+                <h2>Travel preferences</h2>
+                <p>Choose your preferred seat and special requests.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="seatPreference">Seat preference</label>
+                <select id="seatPreference" name="seatPreference">
+                  <option value="No preference">No preference</option>
+                  <option value="Window">Window</option>
+                  <option value="Aisle">Aisle</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mealPreference">Meal preference</label>
+                <select id="mealPreference" name="mealPreference">
+                  <option value="Standard">Standard</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group special-request">
+              <label for="specialRequests">Special requests (optional)</label>
+              <textarea
+                id="specialRequests"
+                name="specialRequests"
+                rows="3"
+                placeholder="Any additional requests?"
+              ></textarea>
+            </div>
+
+            <label class="terms-check">
+              <input type="checkbox" id="demoAgreement" required />
+              <span
+                >I understand this is a demonstration booking and not a real
+                airline reservation. *</span
+              >
+            </label>
+
+            <button type="submit" class="confirm-booking-btn">
+              Book my flight →
+            </button>
+
+            <p
+              class="form-message"
+              id="formMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </section>
+
+        <aside class="flight-summary-panel">
+          <div class="summary-top">
+            <span>YOUR FLIGHT</span>
+            <span class="demo-badge">SAMPLE</span>
+          </div>
+
+          <h2 id="summaryRoute">Select a flight</h2>
+          <p id="summaryDate">Flight date will appear here</p>
+
+          <div class="route-visual">
+            <div class="route-point">
+              <span class="route-dot"></span>
+              <div>
+                <small>DEPARTURE</small>
+                <h3 id="summaryFrom">—</h3>
+                <p id="summaryDepartureTime">Time not selected</p>
+              </div>
+            </div>
+
+            <div class="route-line">
+              <span>✈</span>
+            </div>
+
+            <div class="route-point">
+              <span class="route-dot destination-dot"></span>
+              <div>
+                <small>ARRIVAL</small>
+                <h3 id="summaryTo">—</h3>
+                <p id="summaryArrivalTime">Time not selected</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-details">
+            <div>
+              <span>Flight number</span>
+              <strong id="summaryFlightNumber">SL-101</strong>
+            </div>
+
+            <div>
+              <span>Cabin class</span>
+              <strong id="summaryCabin">Economy</strong>
+            </div>
+
+            <div>
+              <span>Passengers</span>
+              <strong id="summaryPassengers">1 adult</strong>
+            </div>
+          </div>
+
+          <div class="price-breakdown">
+            <h3>Price breakdown</h3>
+
+            <div>
+              <span>Sample fare per passenger</span>
+              <strong id="summaryFare">₦120,000</strong>
+            </div>
+
+            <div>
+              <span>Passengers subtotal</span>
+              <strong id="summarySubtotal">₦120,000</strong>
+            </div>
+
+            <div class="total-price">
+              <span>Total estimated price</span>
+              <strong id="summaryTotal">₦120,000</strong>
+            </div>
+          </div>
+
+          <p class="summary-disclaimer">
+            Sample prices only. This page does not connect to a real airline
+            booking system.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="booking-footer">
+      <p>© 2026 SkyLink Airways. Student demonstration project.</p>
+    </footer>
+  </body>
+</html>
+```

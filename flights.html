@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Search Flights | SkyLink Airways</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../flights.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP BAR -->
+    <div class="announcement">
+      <p>✈ Welcome to SkyLink Airways</p>
+      <a href="destinations.html">Explore destinations →</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="header">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">✈</span>
+        <span>SkyLink<span class="logo-highlight"> Airways</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="navigation" id="navigation">
+        <a href="../index.html">Home</a>
+        <a href="flights.html" class="active">Flights</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">Sign In</a>
+        <a href="signup.html" class="button button-small">Create Account</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- PAGE HERO -->
+      <section class="flights-hero">
+        <div class="flights-hero-content">
+          <span class="section-label">YOUR NEXT ADVENTURE STARTS HERE</span>
+
+          <h1>Find your next <span>flight.</span></h1>
+
+          <p>
+            Explore your travel options and choose a journey that works for you.
+          </p>
+
+          <div class="flights-hero-points">
+            <span>✓ Flexible travel options</span>
+            <span>✓ Three cabin classes</span>
+            <span>✓ Multiple destinations</span>
+          </div>
+        </div>
+
+        <div class="flight-illustration" aria-hidden="true"></div>
+      </section>
+
+      <!-- SEARCH SUMMARY -->
+      <section class="flight-results-section">
+        <div class="results-heading">
+          <div>
+            <span class="section-label">FLIGHT SEARCH</span>
+            <h2 id="routeTitle">Choose your journey</h2>
+            <p id="searchSummary">
+              Enter your travel details to explore example flight options.
+            </p>
+          </div>
+
+          <a href="../index.html#flight-search" class="edit-search">
+            ✎ Edit search
+          </a>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="flight-layout">
+          <aside class="flight-filters">
+            <h3>Refine results</h3>
+
+            <div class="filter-group">
+              <h4>Cabin class</h4>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="cabin-filter"
+                  value="Economy"
+                  checked
+                />
+                Economy
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="cabin-filter"
+                  value="Business"
+                  checked
+                />
+                Business
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="cabin-filter"
+                  value="First"
+                  checked
+                />
+                First Class
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Departure time</h4>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="time-filter"
+                  value="morning"
+                  checked
+                />
+                Morning · 06:00–11:59
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="time-filter"
+                  value="afternoon"
+                  checked
+                />
+                Afternoon · 12:00–17:59
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="time-filter"
+                  value="evening"
+                  checked
+                />
+                Evening · 18:00–23:59
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="time-filter"
+                  value="night"
+                  checked
+                />
+                Night · 00:00–05:59
+              </label>
+            </div>
+
+            <button type="button" id="resetFilters" class="reset-filters">
+              Reset filters
+            </button>
+          </aside>
+
+          <!-- RESULTS -->
+          <section class="flight-results">
+            <section class="availability-panel">
+              <div class="availability-icon">⏱</div>
+
+              <div class="availability-copy">
+                <h3>Demo Availability Refresh</h3>
+                <p>
+                  Sample seat availability refreshes every four hours. This is
+                  not live airline inventory.
+                </p>
+              </div>
+
+              <div class="availability-countdown">
+                <span>Next refresh in</span>
+                <strong id="availabilityCountdown">04:00:00</strong>
+              </div>
+            </section>
+
+            <div class="results-toolbar">
+              <div>
+                <h3>Available options</h3>
+                <p id="resultsCount">Loading flight options...</p>
+              </div>
+
+              <label class="sort-control">
+                <span>Sort:</span>
+
+                <select id="sortFlights">
+                  <option value="recommended">Recommended</option>
+                  <option value="price-low">Lowest price</option>
+                  <option value="price-high">Highest price</option>
+                  <option value="departure">Departure time</option>
+                </select>
+              </label>
+            </div>
+
+            <div id="flightList" class="flight-list"></div>
+
+            <div id="emptyResults" class="empty-results" hidden>
+              <div>✈</div>
+              <h3>No matching options</h3>
+              <p>Try changing your filters or searching another route.</p>
+            </div>
+
+            <p class="demo-notice">
+              Important: These are sample flights for website development. They
+              are not verified operating flights, live schedules, confirmed
+              seats, or purchasable fares.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <!-- CABIN INFORMATION -->
+      <section class="flight-cabin-info">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">TRAVEL YOUR WAY</span>
+            <h2>Choose your cabin.</h2>
+          </div>
+        </div>
+
+        <div class="cabin-grid">
+          <a href="economy.html" class="cabin-card">
+            <div class="cabin-number">01</div>
+            <span class="cabin-tag">EVERYDAY TRAVEL</span>
+            <h3>Economy</h3>
+            <p>A practical option for your next adventure.</p>
+            <span class="cabin-link">Explore Economy →</span>
+          </a>
+
+          <a href="business.html" class="cabin-card cabin-featured">
+            <div class="cabin-number">02</div>
+            <span class="cabin-tag">EXTRA COMFORT</span>
+            <h3>Business</h3>
+            <p>A premium experience for your journey.</p>
+            <span class="cabin-link">Explore Business →</span>
+          </a>
+
+          <a href="first-class.html" class="cabin-card">
+            <div class="cabin-number">03</div>
+            <span class="cabin-tag">PREMIUM EXPERIENCE</span>
+            <h3>First Class</h3>
+            <p>An elevated way to experience air travel.</p>
+            <span class="cabin-link">Explore First Class →</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo footer-logo">
+            <span class="logo-icon">✈</span>
+            <span>SkyLink<span class="logo-highlight"> Airways</span></span>
+          </a>
+
+          <p>Bringing the world closer, one journey at a time.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="flights.html">Search Flights</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="fleet.html">Our Fleet</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Manage</h4>
+          <a href="login.html">My Account</a>
+          <a href="my-bookings.html">My Bookings</a>
+          <a href="manage-booking.html">Manage Booking</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="help.html">Help Centre</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> SkyLink Airways.</p>
+        <p>Designed for journeys without limits.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../flights.js"></script>
+  </body>
+</html>
+```

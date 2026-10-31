@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sign In | SkyLink Airways</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../signup.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="auth-page">
+    <div class="announcement">
+      <p>✈ Welcome to SkyLink Airways</p>
+      <a href="../index.html#destinations">Explore destinations →</a>
+    </div>
+
+    <header class="header">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">✈</span>
+        <span>SkyLink<span class="logo-highlight"> Airways</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="navigation" id="navigation">
+        <a href="../index.html">Home</a>
+        <a href="flights.html">Flights</a>
+        <a href="../index.html#destinations">Destinations</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="signup.html" class="button button-small">Create Account</a>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-visual">
+        <div class="auth-visual-overlay"></div>
+
+        <div class="auth-visual-content">
+          <span class="auth-eyebrow">WELCOME BACK</span>
+          <h1>Your next journey<br />starts <span>here.</span></h1>
+          <p>
+            Sign in to continue planning your travels with SkyLink Airways.
+          </p>
+          <div class="auth-benefits">
+            <div><span>✓</span> Find sample flight options</div>
+            <div><span>✓</span> Explore travel experiences</div>
+            <div><span>✓</span> Plan your next journey</div>
+          </div>
+        </div>
+
+        <div class="auth-visual-footer">
+          SKYLINK AIRWAYS · JOURNEYS WITHOUT LIMITS
+        </div>
+      </section>
+
+      <section class="auth-form-section">
+        <div class="auth-form-container">
+          <a href="../index.html" class="auth-back-link">← Back to home</a>
+
+          <span class="auth-form-eyebrow">YOUR ACCOUNT</span>
+          <h2>Welcome back.</h2>
+          <p class="auth-subtitle">Enter your email and password to sign in.</p>
+
+          <div
+            id="loginMessage"
+            class="auth-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <form id="loginForm">
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  data-target="password"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="button auth-submit-button">
+              Sign In →
+            </button>
+
+            <p class="auth-switch">
+              New to SkyLink?
+              <a href="signup.html">Create an account</a>
+            </p>
+          </form>
+
+          <p class="auth-security-note">
+            Sign-in is a demo form. No password is sent or saved.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="auth-footer">
+      <p>© <span id="currentYear"></span> SkyLink Airways.</p>
+      <p>Website demonstration · Secure account sign-in is not connected yet.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../login.js"></script>
+  </body>
+</html>
