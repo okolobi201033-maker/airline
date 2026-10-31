@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SkyLink Airways | Your Journey Begins Here</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement">
+      <p>✈ Discover the world with SkyLink Airways.</p>
+      <a href="#destinations">Explore destinations →</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="header">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">✈</span>
+        <span>SkyLink<span class="logo-highlight"> Airways</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="navigation" id="navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/flights.html">Flights</a>
+        <a href="#destinations">Destinations</a>
+        <a href="pages/fleet.html">Our Fleet</a>
+        <a href="pages/about.html">About Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="pages/signup.html" class="button button-small">Sign In</a>
+        <a href="pages/signup.html" class="button button-small"
+          >Create Account</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-background"></div>
+
+        <div class="hero-content">
+          <span class="eyebrow">
+            <span class="status-dot"></span>
+            YOUR JOURNEY, OUR PRIORITY
+          </span>
+
+          <h1>The world is closer<br />than you <span>think.</span></h1>
+
+          <p>
+            Discover incredible destinations, enjoy comfortable journeys, and
+            experience a new way to fly with SkyLink Airways.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#flight-search" class="button">Book Your Flight ↗</a>
+            <a href="#destinations" class="button button-outline">
+              Explore Destinations
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-icon">✓</div>
+            <span>Simple booking</span>
+
+            <div class="trust-icon">✓</div>
+            <span>Comfortable journeys</span>
+          </div>
+        </div>
+
+        <div class="hero-label">
+          <span>THE SKY IS YOURS</span>
+          <span class="hero-label-line"></span>
+          <span>SKYLINK AIRWAYS</span>
+        </div>
+
+        <div class="hero-counter">
+          <span>01</span>
+          <div class="counter-line"></div>
+          <span>06 CONTINENTS</span>
+        </div>
+      </section>
+
+      <!-- FLIGHT SEARCH -->
+      <section class="search-section" id="flight-search">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">PLAN YOUR JOURNEY</span>
+            <h2>Where would you like to go?</h2>
+          </div>
+
+          <span class="flight-badge">✈ Flight booking</span>
+        </div>
+
+        <form id="flightSearchForm" class="search-card">
+          <div class="trip-options">
+            <label>
+              <input type="radio" name="tripType" value="round-trip" checked />
+              <span>Round trip</span>
+            </label>
+
+            <label>
+              <input type="radio" name="tripType" value="one-way" />
+              <span>One way</span>
+            </label>
+          </div>
+
+          <div class="search-fields">
+            <div class="field">
+              <label for="departure">FROM</label>
+              <div class="field-input">
+                <span class="field-icon">⌖</span>
+                <select id="departure" required>
+                  <option value="Lagos">Lagos, Nigeria</option>
+                  <option value="Abuja">Abuja, Nigeria</option>
+                  <option value="Accra">Accra, Ghana</option>
+                  <option value="London">London, United Kingdom</option>
+                  <option value="Dubai">Dubai, UAE</option>
+                  <option value="Paris">Paris, France</option>
+                  <option value="New York">New York, USA</option>
+                  <option value="Johannesburg">
+                    Johannesburg, South Africa
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="swap-button"
+              id="swapLocations"
+              aria-label="Swap departure and destination"
+            >
+              ⇄
+            </button>
+
+            <div class="field">
+              <label for="destination">TO</label>
+              <div class="field-input">
+                <span class="field-icon">⌖</span>
+                <select id="destination" required>
+                  <option value="London">London, United Kingdom</option>
+                  <option value="Lagos">Lagos, Nigeria</option>
+                  <option value="Abuja">Abuja, Nigeria</option>
+                  <option value="Accra">Accra, Ghana</option>
+                  <option value="Dubai">Dubai, UAE</option>
+                  <option value="Paris">Paris, France</option>
+                  <option value="New York">New York, USA</option>
+                  <option value="Johannesburg">
+                    Johannesburg, South Africa
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="departureDate">DEPARTURE</label>
+              <div class="field-input">
+                <span class="field-icon">▦</span>
+                <input type="date" id="departureDate" required />
+              </div>
+            </div>
+
+            <div class="field return-field" id="returnField">
+              <label for="returnDate">RETURN</label>
+              <div class="field-input">
+                <span class="field-icon">▦</span>
+                <input type="date" id="returnDate" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="passengers">PASSENGERS</label>
+              <div class="field-input">
+                <span class="field-icon">♙</span>
+                <select id="passengers">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cabinClass">CABIN CLASS</label>
+              <div class="field-input">
+                <span class="field-icon">♧</span>
+                <select id="cabinClass">
+                  <option value="Economy">Economy Class</option>
+                  <option value="Business">Business Class</option>
+                  <option value="First">First Class</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="button search-button">
+              Search Flights <span>→</span>
+            </button>
+          </div>
+
+          <p class="form-note">
+            <span>ⓘ</span>
+            Flight availability and prices will be confirmed when the booking
+            system is connected.
+          </p>
+        </form>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="benefits-section">
+        <div class="benefit">
+          <div class="benefit-icon">✈</div>
+          <div>
+            <h3>Explore More</h3>
+            <p>Discover destinations around the world.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">◇</div>
+          <div>
+            <h3>Your Comfort Matters</h3>
+            <p>Choose the cabin that suits your journey.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">◎</div>
+          <div>
+            <h3>Easy Planning</h3>
+            <p>Organize your journey in one place.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DESTINATIONS -->
+      <section class="destinations-section" id="destinations">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">INSPIRATION FOR YOUR NEXT TRIP</span>
+            <h2>Discover somewhere new.</h2>
+            <p class="section-description">
+              From exciting cities to unforgettable adventures, your next
+              journey starts here.
+            </p>
+          </div>
+
+          <a href="#destinations" class="text-link"> All destinations ↗ </a>
+        </div>
+
+        <div class="destination-grid">
+          <a
+            href="pages/flights.html"
+            class="destination-card destination-africa"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85"
+              alt="African landscape"
+              loading="lazy"
+            />
+            <div class="destination-overlay">
+              <span>01 / CONTINENT</span>
+              <h3>Africa</h3>
+              <p>Discover the extraordinary ↗</p>
+            </div>
+          </a>
+
+          <a href="pages/flights.html" class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=85"
+              alt="Paris city streets"
+              loading="lazy"
+            />
+            <div class="destination-overlay">
+              <span>02 / CONTINENT</span>
+              <h3>Europe</h3>
+              <p>Find your next adventure ↗</p>
+            </div>
+          </a>
+
+          <a href="pages/flights.html" class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=900&q=85"
+              alt="Tokyo city at night"
+              loading="lazy"
+            />
+            <div class="destination-overlay">
+              <span>03 / CONTINENT</span>
+              <h3>Asia</h3>
+              <p>A world of discovery ↗</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- CABIN CLASSES -->
+      <section class="cabin-section" id="cabin-classes">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">TRAVEL YOUR WAY</span>
+            <h2>Choose your experience.</h2>
+          </div>
+        </div>
+
+        <div class="cabin-grid">
+          <a href="pages/flights.html" class="cabin-card">
+            <div class="cabin-number">01</div>
+            <span class="cabin-tag">EVERYDAY TRAVEL</span>
+            <h3>Economy</h3>
+            <p>Enjoy a comfortable journey at a price that works for you.</p>
+            <span class="cabin-link">Explore Economy →</span>
+          </a>
+
+          <a href="pages/flights.html" class="cabin-card cabin-featured">
+            <div class="cabin-number">02</div>
+            <span class="cabin-tag">EXTRA COMFORT</span>
+            <h3>Business</h3>
+            <p>Enjoy a premium travel experience with added comfort.</p>
+            <span class="cabin-link">Explore Business →</span>
+          </a>
+
+          <a href="pages/flights.html" class="cabin-card">
+            <div class="cabin-number">03</div>
+            <span class="cabin-tag">PREMIUM EXPERIENCE</span>
+            <h3>First Class</h3>
+            <p>Discover an elevated way to experience air travel.</p>
+            <span class="cabin-link">Explore First Class →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="cta-section">
+        <div>
+          <span class="section-label">YOUR NEXT CHAPTER STARTS HERE</span>
+          <h2>Ready to take off?</h2>
+          <p>Start planning your next journey with SkyLink Airways.</p>
+        </div>
+
+        <a href="#flight-search" class="button cta-button"
+          >Plan Your Journey ↗</a
+        >
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-icon">✈</span>
+            <span>SkyLink<span class="logo-highlight"> Airways</span></span>
+          </a>
+
+          <p>Bringing the world closer, one journey at a time.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="pages/flights.html">Search Flights</a>
+          <a href="#destinations">Destinations</a>
+          <a href="pages/fleet.html">Our Fleet</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Manage</h4>
+          <a href="pages/signup.html">Create Account</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="pages/about.html">About Us</a>
+          <a href="pages/flights.html">Search Flights</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="currentYear"></span> SkyLink Airways. All rights reserved.
+        </p>
+        <p>Designed for journeys without limits.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

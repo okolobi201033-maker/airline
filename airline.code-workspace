@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../../../Downloads/skylink-flight-page-redesign"
+	},
+	{
+		"path": "../../../Downloads/SkyLink_Fleet_Image_Pack"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "airline"
+  }
+}

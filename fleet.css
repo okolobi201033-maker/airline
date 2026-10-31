@@ -1,0 +1,562 @@
+/* =================================
+   SKYLINK AIRWAYS - FLEET PAGE
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #152b45;
+  background: #ffffff;
+}
+
+/* ANNOUNCEMENT */
+
+.fleet-announcement {
+  background: #061b35;
+  color: #ffffff;
+  text-align: center;
+  padding: 11px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+/* HEADER */
+
+.fleet-header {
+  min-height: 85px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: #ffffff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.fleet-logo {
+  font-size: 29px;
+  font-weight: 900;
+  color: #082747;
+  text-decoration: none;
+}
+
+.fleet-logo span {
+  color: #159bd7;
+}
+
+.fleet-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.fleet-nav a {
+  text-decoration: none;
+  color: #25384d;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.fleet-nav a:hover,
+.fleet-nav a.active {
+  color: #159bd7;
+}
+
+.fleet-nav-button {
+  background: #078bc8;
+  color: white;
+  text-decoration: none;
+  padding: 14px 22px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fleet-nav-button:hover {
+  background: #056c9b;
+}
+
+/* HERO SECTION */
+
+.fleet-hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding: 70px 9%;
+
+  background:
+    linear-gradient(90deg, rgba(2, 18, 38, 0.92), rgba(2, 18, 38, 0.25)),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.fleet-hero-content {
+  max-width: 650px;
+}
+
+.fleet-label {
+  color: #078bc8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.fleet-hero h1 {
+  font-size: clamp(48px, 7vw, 85px);
+  line-height: 1.05;
+  margin: 22px 0;
+  font-weight: 900;
+}
+
+.fleet-hero h1 span {
+  color: #28b5ed;
+}
+
+.fleet-hero p {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 35px;
+  color: #e1edf7;
+}
+
+.fleet-hero-button {
+  display: inline-block;
+  background: #078bc8;
+  color: white;
+  text-decoration: none;
+  padding: 16px 25px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fleet-hero-button:hover {
+  background: #ffffff;
+  color: #082747;
+}
+
+/* INTRODUCTION */
+
+.fleet-intro {
+  text-align: center;
+  padding: 90px 20px 55px;
+}
+
+.fleet-intro h2 {
+  color: #082747;
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0;
+}
+
+.fleet-intro p {
+  max-width: 650px;
+  margin: auto;
+  color: #687789;
+  line-height: 1.8;
+}
+
+/* AIRCRAFT SECTION */
+
+.aircraft-section {
+  padding: 65px 7% 100px;
+  background: #f4f8fc;
+}
+
+.fleet-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.fleet-section-heading h2 {
+  font-size: 40px;
+  color: #082747;
+  margin-top: 12px;
+}
+
+/* AIRCRAFT GRID */
+
+.aircraft-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* AIRCRAFT CARD */
+
+.aircraft-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(5, 35, 65, 0.08);
+  transition:
+    transform 0.35s,
+    box-shadow 0.35s;
+}
+
+.aircraft-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(5, 35, 65, 0.14);
+}
+
+/* AIRCRAFT PHOTOS */
+
+.aircraft-image {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  display: block;
+  background: #e5edf4;
+  transition: transform 0.5s;
+}
+
+.aircraft-card:hover .aircraft-image {
+  transform: scale(1.03);
+}
+
+/* AIRCRAFT INFORMATION */
+
+.aircraft-content {
+  padding: 28px;
+}
+
+.aircraft-category {
+  color: #078bc8;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.aircraft-content h3 {
+  color: #082747;
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.aircraft-content p {
+  color: #69798a;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* AIRCRAFT SPECIFICATIONS */
+
+.aircraft-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 20px 0;
+  margin-top: 15px;
+  border-top: 1px solid #e6edf3;
+  border-bottom: 1px solid #e6edf3;
+}
+
+.aircraft-specs div {
+  font-size: 11px;
+  color: #718094;
+}
+
+.aircraft-specs strong {
+  display: block;
+  color: #082747;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* CABIN SECTION */
+
+.cabin-section {
+  padding: 40px 7% 100px;
+}
+
+.cabin-heading {
+  text-align: center;
+  padding: 40px 20px 50px;
+}
+
+.cabin-heading h2 {
+  color: #082747;
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0;
+}
+
+.cabin-heading p {
+  color: #687789;
+  line-height: 1.8;
+}
+
+/* CABIN GRID */
+
+.cabin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.cabin-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f4f8fc;
+  box-shadow: 0 8px 25px rgba(5, 35, 65, 0.08);
+  transition: 0.3s;
+}
+
+.cabin-card:hover {
+  transform: translateY(-7px);
+}
+
+.cabin-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.cabin-content {
+  padding: 25px;
+}
+
+.cabin-content span {
+  color: #078bc8;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.cabin-content h3 {
+  color: #082747;
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.cabin-content p {
+  color: #687789;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* FACILITIES SECTION */
+
+.facilities-section {
+  background: #f4f8fc;
+  padding: 55px 7% 100px;
+}
+
+.facilities-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.facilities-heading h2 {
+  color: #082747;
+  font-size: clamp(30px, 4vw, 43px);
+  margin-top: 15px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.facility-card {
+  background: #ffffff;
+  padding: 35px 22px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(5, 35, 65, 0.08);
+}
+
+.facility-icon {
+  font-size: 40px;
+  color: #078bc8;
+}
+
+.facility-card h3 {
+  color: #082747;
+  margin: 17px 0;
+  font-size: 17px;
+}
+
+.facility-card p {
+  color: #687789;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+/* BOOKING CTA */
+
+.fleet-cta {
+  background: #082747;
+  color: white;
+  padding: 70px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.fleet-cta span {
+  color: #28b5ed;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.fleet-cta h2 {
+  font-size: 40px;
+  margin: 12px 0;
+}
+
+.fleet-cta p {
+  color: #c4d5e5;
+}
+
+.fleet-cta a {
+  background: #078bc8;
+  color: white;
+  padding: 17px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fleet-cta a:hover {
+  background: white;
+  color: #082747;
+}
+
+/* DISCLAIMER */
+
+.fleet-disclaimer {
+  padding: 20px 7%;
+  text-align: center;
+  background: #eaf1f7;
+  color: #526579;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+.fleet-footer {
+  padding: 50px 20px;
+  text-align: center;
+  background: #04172c;
+  color: white;
+}
+
+.fleet-footer .fleet-logo {
+  color: white;
+}
+
+.fleet-footer p {
+  margin-top: 15px;
+  color: #bdcbd9;
+  font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+  .fleet-nav {
+    gap: 13px;
+  }
+
+  .fleet-nav a {
+    font-size: 12px;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .fleet-header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .fleet-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .fleet-nav-button {
+    display: none;
+  }
+
+  .fleet-hero {
+    min-height: 500px;
+    padding: 50px 7%;
+  }
+
+  .aircraft-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cabin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .fleet-nav {
+    gap: 12px;
+  }
+
+  .fleet-nav a {
+    font-size: 11px;
+  }
+
+  .fleet-hero h1 {
+    font-size: 48px;
+  }
+
+  .aircraft-content {
+    padding: 20px;
+  }
+
+  .aircraft-specs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-cta h2 {
+    font-size: 30px;
+  }
+}
